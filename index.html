@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YourStudio | Online Development</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Figtree', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .logo img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .discord-btn {
+      padding: 8px 15px;
+      background: #e0e0f8;
+      color: #5865F2;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .discord-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 70px);
+      background-color: #0a0a0a;
+      background-image: 
+        radial-gradient(circle at var(--x1, 20%) var(--y1, 30%), rgba(0, 30, 60, 0.3) 0%, rgba(0, 30, 60, 0.15) 7%, rgba(0, 30, 60, 0.05) 10%, transparent 40%),
+        radial-gradient(circle at var(--x2, 80%) var(--y2, 60%), rgba(0, 30, 60, 0.3) 0%, rgba(0, 30, 60, 0.15) 5%, rgba(0, 30, 60, 0.05) 10%, transparent 40%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      padding: 0 20px;
+      --x1: 20%;
+      --y1: 30%;
+      --x2: 80%;
+      --y2: 60%;
+    }
+
+    .hero h1 {
+      font-size: 6em;
+      font-weight: bold;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #ffd700, #ff8c00, #ff1493);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ======= Responsive Styles ======= */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        padding-left: 5px;
+      }
+
+      .discord-btn {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2.2em;
+      }
+
+      .logo {
+        font-size: 1.2em;
+      }
+
+      .discord-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="yourstudiologo.png" alt="YourStudio Logo" />
+      YourStudio
+    </div>
+    <div class="nav-links">
+      
+    </div>
+    <a href="https://discord.gg/4jayJ6uupC" class="discord-btn">
+      <img src="discord.svg" alt="Discord" class="discord-icon" />
+      Join our Discord
+    </a>
+  </div>
+
+  <div class="hero">
+    <h1><span class="highlight">We'll be right Back</span></h1>
+  </div>
+
+  <script>
+    const hero = document.querySelector('.hero');
+
+    gsap.to(hero, {
+      duration: 8,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      css: {
+        "--x1": "25%",
+        "--y1": "35%",
+        "--x2": "75%",
+        "--y2": "55%"
+      }
+    });
+  </script>
+</body>
+</html>
