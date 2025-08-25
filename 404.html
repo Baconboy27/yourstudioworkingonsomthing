@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourStudio | 404</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --background: #0a0a0a;
+      --card-bg: #111111;
+      --card-hover: #1a1a1a;
+      --text: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border-radius: 12px;
+      --border-radius-sm: 8px;
+      --transition: all 0.3s ease;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;    
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+    
+    /* Button styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      outline: none;
+      text-decoration: none;
+      gap: 0.5rem;
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    /* Header styles */
+    header {
+      padding: 1.5rem 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+    
+    /* 404 Page Specific Styles */
+    .error-page {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .error-content {
+      text-align: center;
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .error-code {
+      font-size: clamp(6rem, 15vw, 12rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    
+    .error-illustration {
+      margin: 2rem auto;
+      max-width: 300px;
+      position: relative;
+    }
+    
+    .error-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    /* Background elements */
+    .bg-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: 0;
+    }
+    
+    .bg-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, rgba(10, 10, 10, 0) 50%);
+      z-index: 0;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      opacity: 0.1;
+      filter: blur(50px);
+      z-index: 0;
+    }
+    
+    .shape-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -100px;
+    }
+    
+    .shape-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -100px;
+      left: -50px;
+    }
+    
+    .notebook-binding {
+      position: absolute;
+      left: 20px;
+      top: 0;
+      height: 100%;
+      width: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    }
+    
+    .notebook-hole {
+      width: 8px;
+      height: 8px;
+      background-color: var(--background);
+      border-radius: 50%;
+      position: absolute;
+      left: 21px;
+    }
+    
+    .hole-1 { top: 40px; }
+    .hole-2 { top: 80px; }
+    .hole-3 { top: 120px; }
+    .hole-4 { top: 160px; }
+    .hole-5 { top: 200px; }
+    
+    .notebook-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      text-align: center;
+    }
+    
+    .notebook-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    
+    .notebook-text {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 2rem 0;
+      background-color: var(--card-bg);
+      text-align: center;
+    }
+    
+    .copyright {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .error-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+    
+    /* Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    .float {
+      animation: float 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="https://yourstudio.dev" class="logo">
+          <img src="yourstudiologo.png" alt="yntlogo" width="24" height="24" >
+          </svg>
+          YourStudio
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 404 Error Content -->
+  <main class="error-page">
+    <div class="bg-grid"></div>
+    <div class="bg-gradient"></div>
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    
+    <div class="container">
+      <div class="error-content">
+        <h1 class="error-code">404</h1>
+        <h2>Page Not Found</h2>
+        <p>Oops! The page you're looking for seems to have vanished.</p>
+        
+        
+        
+        <p>Don't worry, you can always return to our homepage.</p>
+        
+        <div class="error-buttons">
+          <a href="https://yourstudio.dev" class="btn btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            Return Home
+          </a>
+          <a href="https://https://yourstudio.dev/404" class="btn btn-secondary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            Search
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        &copy; 2025 YourStudio. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add subtle parallax effect on mouse move
+      document.addEventListener('mousemove', function(e) {
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+        
+        const notebook = document.querySelector('.notebook');
+        notebook.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        
+        const shapes = document.querySelectorAll('.floating-shape');
+        shapes.forEach((shape, index) => {
+          const factor = index === 0 ? 0.03 : -0.02;
+          shape.style.transform = `translate(${moveX * factor * 10}px, ${moveY * factor * 10}px)`;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
